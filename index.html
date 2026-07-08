@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logic Analyzer Pro | Industrial PLC Dependency Analysis</title>
-    <!-- Font Awesome for beautiful icons -->
+    <title>Pricing & ROI | Logic Analyzer Pro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -14,7 +13,7 @@
             --accent: #e67e22;
             --danger: #e74c3c;
             --bg: #f8fafc;
-            --card-bg: #ffffff;
+            --white: #ffffff;
             --text-dark: #1e293b;
             --text-light: #64748b;
             --border: #e2e8f0;
@@ -24,30 +23,38 @@
             --save-green-text: #166534;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', -apple-system, sans-serif; }
-        body { background: var(--bg); color: var(--text-dark); line-height: 1.6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background: var(--bg); color: var(--text-dark); line-height: 1.6; padding-bottom: 100px; }
 
-        /* Navigation */
-        nav { background: var(--card-bg); padding: 18px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+        /* Multilingual class visibility toggling */
+        .lang-de { display: none !important; }
+        body.de-active .lang-en { display: none !important; }
+        body.de-active .lang-de { display: block !important; }
+        body.de-active span.lang-de { display: inline !important; }
+        body.de-active td.lang-de { display: table-cell !important; }
+        body.de-active th.lang-de { display: table-cell !important; }
+
+        /* Navigation styling */
+        nav { background: var(--white); padding: 18px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
         .logo { font-weight: 800; font-size: 1.4rem; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; cursor: pointer; }
+        .nav-right { display: flex; align-items: center; gap: 30px; }
         .nav-links { display: flex; gap: 25px; }
         .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: 0.2s; }
         .nav-links a:hover { color: var(--primary); }
+        
+        /* Language switcher button */
+        .lang-toggle-btn { background: var(--primary); color: white; border: none; padding: 6px 14px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 0.85rem; transition: 0.2s; }
+        .lang-toggle-btn:hover { background: var(--primary-dark); }
 
-        /* Hero & Header */
+        /* Hero */
         .hero { text-align: center; padding: 60px 20px; background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
         .hero h1 { font-size: 2.6rem; color: var(--primary); margin-bottom: 12px; font-weight: 800; }
         .hero p { color: var(--text-light); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
 
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
 
-        /* Page Layout */
-        .page { display: none; }
-        .active-page { display: block; animation: fadeIn 0.4s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Pricing Toggle Switch */
+        /* Toggle Container for billing options */
         .toggle-area { display: flex; flex-direction: column; align-items: center; margin-bottom: 45px; }
         .toggle-container { display: flex; align-items: center; gap: 10px; background: #e2e8f0; padding: 6px; border-radius: 50px; }
         .toggle-option { padding: 8px 22px; border-radius: 50px; cursor: pointer; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
@@ -55,9 +62,9 @@
         .toggle-text { color: var(--text-light); }
         .save-banner { margin-top: 12px; color: var(--secondary); font-weight: 700; font-size: 0.88rem; }
 
-        /* Pricing Cards */
+        /* Pricing Grid Layout */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; align-items: stretch; margin-bottom: 50px; }
-        .card { background: var(--white); border-radius: 12px; padding: 35px 25px; border: 1px solid var(--border); display: flex; flex-direction: column; transition: 0.3s; position: relative; overflow: hidden; background: white; }
+        .card { background: var(--white); border-radius: 12px; padding: 35px 25px; border: 1px solid var(--border); display: flex; flex-direction: column; transition: 0.3s; position: relative; overflow: hidden; }
         .card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
         .card.featured { border: 2px solid var(--secondary); }
         .ribbon { position: absolute; top: 15px; right: -35px; background: var(--secondary); color: white; padding: 4px 35px; transform: rotate(45deg); font-size: 0.65rem; font-weight: bold; letter-spacing: 1px; }
@@ -67,25 +74,26 @@
         .old-price { color: var(--danger); text-decoration: line-through; font-size: 1.1rem; font-weight: 600; display: block; height: 1.4rem; }
         .current-price { font-size: 3rem; font-weight: 800; color: var(--text-dark); line-height: 1; }
         .period { font-size: 0.95rem; color: var(--text-light); }
+        
         .promo-badge { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 800; margin-top: 8px; }
         .badge-yellow { background: var(--promo-bg); color: var(--promo-text); }
         .badge-green { background: var(--save-green-bg); color: var(--save-green-text); }
 
-        .desc { font-size: 0.92rem; color: var(--text-light); margin: 20px 0; min-height: 50px; }
+        .desc { font-size: 0.92rem; color: var(--text-light); margin: 20px 0; min-height: 60px; }
         .features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
         .features li { font-size: 0.88rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; text-align: left; }
         .features li i { color: var(--secondary); font-size: 0.95rem; }
 
-        /* Buttons */
+        /* Call To Action Buttons */
         .btn { display: block; width: 100%; padding: 14px; border-radius: 6px; text-align: center; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: 0.2s; border: none; cursor: pointer; }
-        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
         .btn-outline:hover { background: var(--primary); color: white; }
         .btn-primary { background: var(--primary); color: white; }
         .btn-primary:hover { background: var(--primary-dark); }
         .btn-success { background: var(--secondary); color: white; }
         .btn-success:hover { opacity: 0.95; }
 
-        /* Table */
+        /* Interactive table structures */
         .table-section { background: white; border-radius: 12px; padding: 35px; border: 1px solid var(--border); overflow-x: auto; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
         .table-section h2 { margin-bottom: 20px; color: var(--primary); font-size: 1.6rem; text-align: center; }
         table { width: 100%; border-collapse: collapse; min-width: 600px; }
@@ -93,30 +101,27 @@
         th { color: var(--primary); font-size: 1rem; background: #f8fafc; }
         td:first-child { text-align: left; font-weight: 600; color: var(--text-dark); width: 35%; }
 
-        /* Guide & Info */
+        /* Interactive instructional guides */
         .box-container { background: white; border-radius: 12px; padding: 40px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
         .box-container h2 { color: var(--primary); margin-bottom: 25px; text-align: center; font-size: 1.8rem; }
         .step { display: flex; gap: 20px; margin-bottom: 30px; align-items: flex-start; }
         .step-num { background: var(--primary); color: white; width: 36px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
         .hw-demo { background: #1e293b; color: #10a37f; font-family: monospace; padding: 10px 15px; border-radius: 5px; display: inline-block; margin-top: 10px; font-weight: bold; }
 
-        /* Upgrade promise banner */
+        /* Upgrade strategic panel */
         .upgrade-banner { background: linear-gradient(135deg, #e8f4fd, #ffffff); border: 1px dashed var(--primary); border-radius: 12px; padding: 30px; display: flex; align-items: center; gap: 20px; margin-top: 40px; }
         .upgrade-banner i { font-size: 2.5rem; color: var(--accent); }
-        .upgrade-content h3 { color: var(--primary); margin-bottom: 5px; }
+        .upgrade-content h2 { color: var(--primary); margin-bottom: 5px; font-size: 1.35rem; }
         .upgrade-content p { font-size: 0.92rem; color: var(--text-light); }
 
-        /* Legal / Compliance Info */
-        .legal-notice-box { margin-top: 30px; border-top: 1px solid var(--border); padding-top: 25px; font-size: 0.85rem; color: var(--text-light); }
-        .legal-notice-box h4 { color: var(--text-dark); margin-bottom: 8px; }
-
-        /* Impressum Style */
+        /* Impressum Layout */
         .impressum-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
         .impressum-block { margin-bottom: 20px; }
         .impressum-block h3 { color: var(--primary); margin-bottom: 12px; border-bottom: 2px solid var(--primary); padding-bottom: 5px; }
         .impressum-block p { margin-bottom: 6px; font-size: 0.95rem; }
+        .legal-notice-box { margin-top: 30px; border-top: 1px solid var(--border); padding-top: 25px; font-size: 0.85rem; color: var(--text-light); }
+        .legal-notice-box h4 { color: var(--text-dark); margin-bottom: 8px; }
 
-        /* Footer */
         footer { text-align: center; padding: 50px 20px; background: white; border-top: 1px solid var(--border); color: var(--text-light); font-size: 0.88rem; margin-top: 60px; }
 
         @media (max-width: 768px) {
@@ -130,14 +135,29 @@
 
 <nav>
     <div class="nav-container">
-        <a class="logo" onclick="showPage('pricing')">
+        <div class="logo">
             <i class="fas fa-microchip"></i> Logic Analyzer Pro
-        </a>
-        <div class="nav-links">
-            <a onclick="showPage('pricing')">Licensing Plans</a>
-            <a onclick="showPage('comparison')">Full Matrix</a>
-            <a onclick="showPage('activation')">How to Activate</a>
-            <a onclick="showPage('legal')">Impressum & Legal</a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-links">
+                <a onclick="showPage('pricing')">
+                    <span class="lang-en">Pricing</span>
+                    <span class="lang-de">Preise</span>
+                </a>
+                <a onclick="showPage('comparison')">
+                    <span class="lang-en">Capabilities</span>
+                    <span class="lang-de">Vergleich</span>
+                </a>
+                <a onclick="showPage('activation')">
+                    <span class="lang-en">Activation</span>
+                    <span class="lang-de">Aktivierung</span>
+                </a>
+                <a onclick="showPage('legal')">
+                    <span class="lang-en">Legal & Impressum</span>
+                    <span class="lang-de">Impressum & DSGVO</span>
+                </a>
+            </div>
+            <button class="lang-toggle-btn" onclick="toggleLanguage()">DE / EN</button>
         </div>
     </div>
 </nav>
@@ -147,16 +167,28 @@
     <!-- PAGE 1: PRICING -->
     <div id="pricing" class="page active-page">
         <div class="hero">
-            <h1>Simple, Transparent Pricing</h1>
-            <p>Industrial PLC analysis. Fully offline execution, designed for field-engineers.</p>
+            <h1 class="lang-en">Simple, Transparent Pricing</h1>
+            <h1 class="lang-de">Einfache, transparente Preise</h1>
+            
+            <p class="lang-en">Industrial PLC analysis. Fully offline execution, designed for field-engineers.</p>
+            <p class="lang-de">Professionelle SPS-Analyse. Funktioniert komplett offline, entwickelt für Inbetriebnehmer.</p>
         </div>
 
         <div class="toggle-area">
-            <div class="toggle-box">
-                <div id="btn-annual" class="toggle-option toggle-active" onclick="setMode('annual')">Annual Billing</div>
-                <div id="btn-lifetime" class="toggle-option toggle-text" onclick="setMode('lifetime')">Lifetime (Perpetual)</div>
+            <div class="toggle-container">
+                <div id="opt-annual" class="toggle-option toggle-active" onclick="setMode('annual')">
+                    <span class="lang-en">Annual Billing</span>
+                    <span class="lang-de">Jährliche Zahlung</span>
+                </div>
+                <div id="opt-lifetime" class="toggle-option toggle-text" onclick="setMode('lifetime')">
+                    <span class="lang-en">Lifetime (Perpetual)</span>
+                    <span class="lang-de">Lebenslang (Dauerhaft)</span>
+                </div>
             </div>
-            <div id="savings-msg" class="save-banner">Choose Lifetime to save money after just 2.5 years!</div>
+            <div id="savings-msg" class="save-banner">
+                <span class="lang-en">Choose Lifetime to save money after just 2.5 years!</span>
+                <span class="lang-de">Wählen Sie Lebenslang, um bereits nach 2,5 Jahren Kosten zu sparen!</span>
+            </div>
         </div>
 
         <div class="grid">
@@ -168,15 +200,36 @@
                     <span class="current-price">€0</span>
                     <span class="period">/ 30 days</span>
                 </div>
-                <div class="promo-badge" style="background:#e2e8f0; color:#475569;">EVALUATION MODE</div>
-                <p class="desc">For students and engineers evaluating on-site code block connectivity maps.</p>
+                <div class="promo-badge" style="background:#e2e8f0; color:#475569;">
+                    <span class="lang-en">EVALUATION MODE</span>
+                    <span class="lang-de">DEMO-MODUS</span>
+                </div>
+                
+                <p class="desc lang-en">For students and engineers evaluating SCL/XML project block structures.</p>
+                <p class="desc lang-de">Für Studenten und Ingenieure zur lokalen Evaluierung kleinerer SCL/XML Bausteine.</p>
+                
                 <ul class="features">
-                    <li><i class="fas fa-check"></i> Max 50 Code Blocks</li>
-                    <li><i class="fas fa-check"></i> 1 Active Workstation</li>
-                    <li><i class="fas fa-check"></i> Local AI Analysis</li>
-                    <li><i class="fas fa-times" style="color:#cbd5e1"></i> No Code Export</li>
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">Max 50 Code Blocks</span>
+                        <span class="lang-de">Max. 50 SPS-Bausteine</span>
+                    </li>
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">1 Workstation Seat</span>
+                        <span class="lang-de">1 Workstation-Aktivierung</span>
+                    </li>
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">Local AI Analysis (Ollama)</span>
+                        <span class="lang-de">Lokale KI-Analyse (Ollama)</span>
+                    </li>
+                    <li><i class="fas fa-times" style="color:#cbd5e1"></i> 
+                        <span class="lang-en">No Code Export</span>
+                        <span class="lang-de">Kein Code-Export möglich</span>
+                    </li>
                 </ul>
-                <a href="#" class="btn btn-outline">Download Trial</a>
+                <a href="#" class="btn btn-outline">
+                    <span class="lang-en">Download Trial</span>
+                    <span class="lang-de">Demo herunterladen</span>
+                </a>
             </div>
 
             <!-- PRO -->
@@ -187,5 +240,422 @@
                     <span id="pro-price" class="current-price">€299</span>
                     <span id="pro-period" class="period">/ year</span>
                 </div>
-                <div id="pro-badge" class="promo-badge badge-yellow">LAUNCH PROMO: 25% OFF</div>
-                <p
+                <div id="pro-badge" class="promo-badge badge-yellow">
+                    <span class="lang-en">LAUNCH PROMO: 25% OFF</span>
+                    <span class="lang-de">LAUNCH-RABATT: 25% SPAREN</span>
+                </div>
+                
+                <p class="desc lang-en">Standard operational tool for professional independent PLC programmers.</p>
+                <p class="desc lang-de">Das Standardwerkzeug für selbstständige SPS-Programmierer und Freiberufler.</p>
+                
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">Max 500 Code Blocks</span>
+                        <span class="lang-de">Max. 500 SPS-Bausteine</span>
+                    </li>
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">1 Workstation Seat</span>
+                        <span class="lang-de">1 Workstation-Aktivierung</span>
+                    </li>
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">Local & Cloud AI Access</span>
+                        <span class="lang-de">Lokaler & Cloud-KI-Zugriff</span>
+                    </li>
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">Export Clean Logic to Text</span>
+                        <span class="lang-de">Bereinigten SCL-Code exportieren</span>
+                    </li>
+                </ul>
+                <a href="https://scaauditor.lemonsqueezy.com/checkout/buy/42b3f4e6-41c0-47e8-ab02-d0b83c099fe6" class="btn btn-primary" target="_blank">
+                    <span class="lang-en">Buy Pro License</span>
+                    <span class="lang-de">Pro-Lizenz kaufen</span>
+                </a>
+            </div>
+
+            <!-- TEAM -->
+            <div class="card featured">
+                <div class="ribbon">RECOMMENDED</div>
+                <div class="tier-title" style="color:var(--secondary)">Team</div>
+                <div class="price-box">
+                    <span id="team-old" class="old-price">€1,299</span>
+                    <span id="team-price" class="current-price">€999</span>
+                    <span id="team-period" class="period">/ year</span>
+                </div>
+                <div id="team-badge" class="promo-badge badge-yellow">
+                    <span class="lang-en">BEST VALUE: 23% OFF</span>
+                    <span class="lang-de">BESTES ANGEBOT: 23% SPAREN</span>
+                </div>
+                
+                <p class="desc lang-en">Designed for automation engineering teams and system integrators.</p>
+                <p class="desc lang-de">Entwickelt für Automatisierungsteams und Systemintegratoren.</p>
+                
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en"><b>Unlimited</b> PLC Blocks</span>
+                        <span class="lang-de"><b>Unbegrenzte</b> SPS-Bausteine</span>
+                    </li>
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en"><b>Up to 5</b> Workstations</span>
+                        <span class="lang-de"><b>Bis zu 5</b> Workstation Seats</span>
+                    </li>
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">Global Architecture Reports</span>
+                        <span class="lang-de">Projekt-Architekturberichte</span>
+                    </li>
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">Custom Enterprise AI Endpoints</span>
+                        <span class="lang-de">Eigene Enterprise KI-Endpunkte</span>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-success">
+                    <span class="lang-en">Get Team Key</span>
+                    <span class="lang-de">Team-Lizenz kaufen</span>
+                </a>
+            </div>
+
+            <!-- SITE -->
+            <div class="card">
+                <div class="tier-title">Site</div>
+                <div class="price-box">
+                    <span class="old-price"></span>
+                    <span class="current-price">€5,999</span>
+                    <span class="period">/ one-time</span>
+                </div>
+                <div class="promo-badge badge-green">
+                    <span class="lang-en">ENTERPRISE LICENSE</span>
+                    <span class="lang-de">UNTERNEHMENS-LIZENZ</span>
+                </div>
+                
+                <p class="desc lang-en">Corporate-wide master key for complete factory and manufacturing floors.</p>
+                <p class="desc lang-de">Unbegrenzter Master-Key für komplette Fabrikstandorte und Werke.</p>
+                
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">Unlimited PLC Blocks</span>
+                        <span class="lang-de">Unbegrenzte SPS-Bausteine</span>
+                    </li>
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">Unlimited Workstations</span>
+                        <span class="lang-de">Unbegrenzte Aktivierungen</span>
+                    </li>
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">Universal Master Key (No Internet)</span>
+                        <span class="lang-de">Universeller Master-Key (Kein Internet)</span>
+                    </li>
+                    <li><i class="fas fa-check"></i> 
+                        <span class="lang-en">100% Offline Activation</span>
+                        <span class="lang-de">100% Offline-Aktivierung</span>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-primary">
+                    <span class="lang-en">Purchase Site License</span>
+                    <span class="lang-de">Site-Lizenz anfragen</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="upgrade-banner">
+            <i class="fas fa-arrows-spin"></i>
+            <div class="upgrade-content">
+                <h2 class="lang-en">Our Upgrade Promise: "Only Pay the Difference"</h2>
+                <h2 class="lang-de">Unser Upgrade-Versprechen: "Nur die Differenz zahlen"</h2>
+                
+                <p class="lang-en">Start with confidence. If you purchase a <b>Pro</b> license today and later scale into a <b>Team</b> license, we credit your previous payments 100%. You only pay the difference.</p>
+                <p class="lang-de">Beruhigt starten. Wenn Sie heute eine <b>Pro</b>-Lizenz erwerben und später auf <b>Team</b> erweitern, rechnen wir Ihre Zahlungen zu 100% an. Sie zahlen nur die Differenz.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: COMPARISON -->
+    <div id="comparison" class="page">
+        <div class="table-section">
+            <h2 class="lang-en">Detailed Capability Matrix</h2>
+            <h2 class="lang-de">Detaillierte Leistungsmatrix</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="lang-en">Capability</span>
+                            <span class="lang-de">Leistungsmerkmal</span>
+                        </th>
+                        <th>Intro</th>
+                        <th>Pro</th>
+                        <th>Team</th>
+                        <th>Site</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="lang-en">Project Block Capacity</span>
+                            <span class="lang-de">Max. SPS-Bausteine im Projekt</span>
+                        </td>
+                        <td>50</td>
+                        <td>500</td>
+                        <td>Unlimited</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="lang-en">Machine Workstation Seats</span>
+                            <span class="lang-de">Workstation-Aktivierungen</span>
+                        </td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="lang-en">Dependency Access Graphs</span>
+                            <span class="lang-de">Grafische Abhängigkeitsanalyse</span>
+                        </td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="lang-en">Local AI Analysis (Ollama)</span>
+                            <span class="lang-de">Lokale Offline-KI (Ollama)</span>
+                        </td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="lang-en">Export Code to SCL Text</span>
+                            <span class="lang-de">Bereinigten SCL-Text exportieren</span>
+                        </td>
+                        <td><i class="fas fa-times" style="color:#ccc"></i></td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="lang-en">AI Project Architecture PDF</span>
+                            <span class="lang-de">KI SPS-Architekturbericht (PDF)</span>
+                        </td>
+                        <td><i class="fas fa-times" style="color:#ccc"></i></td>
+                        <td><i class="fas fa-times" style="color:#ccc"></i></td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="lang-en">100% Offline Air-Gapped Key</span>
+                            <span class="lang-de">100% Offline Master-Key (Werks-Key)</span>
+                        </td>
+                        <td><i class="fas fa-times" style="color:#ccc"></i></td>
+                        <td><i class="fas fa-times" style="color:#ccc"></i></td>
+                        <td><i class="fas fa-times" style="color:#ccc"></i></td>
+                        <td><i class="fas fa-check" style="color:var(--secondary)"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- PAGE 3: ACTIVATION GUIDE -->
+    <div id="activation" class="page">
+        <div class="box-container">
+            <h2 class="lang-en">Workstation Activation Steps</h2>
+            <h2 class="lang-de">Workstation-Aktivierungsschritte</h2>
+            
+            <div class="step">
+                <div class="step-num">1</div>
+                <div>
+                    <h3 class="lang-en">Generate Hardware Fingerprint</h3>
+                    <h3 class="lang-de">Hardware-Fingerabdruck generieren</h3>
+                    
+                    <p class="lang-en">Download and run the software. The Activation screen displays your unique 12-char hardware hash.</p>
+                    <p class="lang-de">Laden Sie die Software herunter und starten Sie diese. Der Aktivierungsbildschirm zeigt Ihren eindeutigen 12-stelligen Hardware-Hash an.</p>
+                    
+                    <div class="hw-demo">Hardware ID: 1F77A1A2BBE6</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">2</div>
+                <div>
+                    <h3 class="lang-en">Complete Purchase</h3>
+                    <h3 class="lang-de">Kauf abschließen</h3>
+                    
+                    <p class="lang-en">Enter your Hardware ID into the optional checkout field on Lemon Squeezy to automatically pre-register. If you are on mobile, leave it blank; you can bind it later.</p>
+                    <p class="lang-de">Geben Sie Ihre Hardware-ID in das optionale Feld an der Kasse von Lemon Squeezy ein. Wenn Sie mit dem Handy kaufen, lassen Sie das Feld leer; Sie können den Key später zuweisen.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">3</div>
+                <div>
+                    <h3 class="lang-en">Activate and Run Offline</h3>
+                    <h3 class="lang-de">Aktivieren & Offline nutzen</h3>
+                    
+                    <p class="lang-en">Input your received key into the desktop client. Once verified, the program saves its cache and can operate completely offline on the plant floor.</p>
+                    <p class="lang-de">Geben Sie Ihren Lizenzschlüssel in das Programm ein. Nach erfolgreicher Prüfung arbeitet die Software dauerhaft offline in Ihrer Industrieanlage.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 4: LEGAL NOTICES & IMPRESSUM -->
+    <div id="legal" class="page">
+        <div class="box-container">
+            <h2>Legal Disclosures & Impressum</h2>
+            <p style="color:var(--text-light); margin-bottom: 20px;">Required regulatory disclosures in accordance with § 5 of the German Digital Services Act (DDG).</p>
+            
+            <div class="impressum-grid">
+                <div class="impressum-block">
+                    <h3>Impressum</h3>
+                    <p><strong>Operator & Publisher:</strong></p>
+                    <p>Gholamreza Mehranpour</p>
+                    <p>Industrial Intelligence (Geschäftsbezeichnung)</p>
+                    
+                    <!-- Write your actual physical street name & house number in Pfullendorf below: -->
+                    <p>AM Pfarröschle   2</p> 
+                    <p>88630 Pfullendorf, Germany</p>
+                    
+                    <p><strong>Contact Details:</strong></p>
+                    <p>Email: rezamehranpour1981@gmail.com</p>
+                </div>
+
+                <div class="impressum-block">
+                    <h3>Legal Entity Details</h3>
+                    <p><strong>Legal Form:</strong> Einzelunternehmen (Sole Proprietorship)</p>
+                    <p><strong>Regulatory Tax Identifier:</strong> Steuer-ID: 65316948672</p>
+                    
+                    <!-- Fixed: Updated to the correct chamber for Pfullendorf -->
+                    <p><strong>Registered Chamber:</strong> IHK Bodensee-Oberschwaben, Germany</p>
+                    <p><strong>Responsible for Content:</strong> G. Mehranpour</p>
+                </div>
+            </div>
+
+            <div class="legal-notice-box">
+                <h4>Trademark & Affiliation Disclaimer</h4>
+                <p>Siemens, SIMATIC, TIA Portal, STEP 7, and S7-1500 are registered trademarks of Siemens AG. Logic Analyzer Pro is an independent analytical tool designed for structural code tracing and is not affiliated, sponsored, endorsed, or approved by Siemens AG.</p>
+                <br>
+                <h4>Industrial Safety Notice</h4>
+                <p>Logic Analyzer Pro is an engineering analysis aid only. It is not safety-certified (SIL/PL compliant) and must never be used to approve functional safety loops, machine operations, process interlocks, or machinery FAT/SAT commissioning approvals.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 Industrial Intelligence. All rights reserved.</p>
+    <p style="margin-top:10px; font-size:0.8rem; opacity:0.8;">Perpetual license packages include 12 months of free version maintenance. Prices exclude tax where applicable.</p>
+</footer>
+
+<script>
+    // Handles multi-page views cleanly
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
+        document.getElementById(pageId).classList.add('active-page');
+        window.scrollTo(0,0);
+    }
+
+    // Handles bilingual toggle state changes
+    function toggleLanguage() {
+        document.body.classList.toggle('de-active');
+        const isDe = document.body.classList.contains('de-active');
+        localStorage.setItem('lang_preference', isDe ? 'de' : 'en');
+    }
+
+    // Load language preference on launch
+    window.addEventListener('DOMContentLoaded', () => {
+        if (localStorage.getItem('lang_preference') === 'de') {
+            document.body.classList.add('de-active');
+        }
+    });
+
+    // Calculates and dynamically updates prices based on billing toggles
+    function setMode(mode) {
+        const isLifetime = (mode === 'lifetime');
+        document.getElementById('opt-annual').className = isLifetime ? 'toggle-option toggle-text' : 'toggle-option toggle-active';
+        document.getElementById('opt-lifetime').className = isLifetime ? 'toggle-option toggle-active' : 'toggle-option toggle-text';
+
+        const proPrice = document.getElementById('pro-price');
+        const proOld = document.getElementById('pro-old');
+        const proBadge = document.getElementById('pro-badge');
+        const proPeriod = document.getElementById('pro-period');
+
+        const teamPrice = document.getElementById('team-price');
+        const teamOld = document.getElementById('team-old');
+        const teamBadge = document.getElementById('team-badge');
+        const teamPeriod = document.getElementById('team-period');
+
+        const msg = document.getElementById('savings-msg');
+
+        if (isLifetime) {
+            // Update savings banner in English and German
+            msg.innerHTML = `
+                <span class="lang-en">⭐ ROI ALERT: Break-even in less than 2.5 years compared to Yearly subscriptions!</span>
+                <span class="lang-de">⭐ ROI-ALARM: Amortisiert nach weniger als 2,5 Jahren im Vergleich zu Abonnements!</span>
+            `;
+
+            proPrice.innerText = "€749";
+            proOld.innerText = "€897"; // 3-year subscription comparison anchor
+            
+            // Set dynamic lifetime badges in both languages
+            proBadge.innerHTML = `
+                <span class="lang-en">OWN IT FOREVER (CAPEX)</span>
+                <span class="lang-de">DAUERHAFT LIZENZIERT (CAPEX)</span>
+            `;
+            proBadge.className = "promo-badge badge-green";
+            proPeriod.innerHTML = `
+                <span class="lang-en">One-time</span>
+                <span class="lang-de">Einmalig</span>
+            `;
+
+            teamPrice.innerText = "€2,499";
+            teamOld.innerText = "€2,997";
+            teamBadge.innerHTML = `
+                <span class="lang-en">FIRM PERPETUAL STANDARD</span>
+                <span class="lang-de">FIRMENDUBLIKAT STANDARD</span>
+            `;
+            teamBadge.className = "promo-badge badge-green";
+            teamPeriod.innerHTML = `
+                <span class="lang-en">One-time</span>
+                <span class="lang-de">Einmalig</span>
+            `;
+        } else {
+            msg.innerHTML = `
+                <span class="lang-en">Choose Lifetime to save money after just 2.5 years!</span>
+                <span class="lang-de">Wählen Sie Lebenslang, um bereits nach 2,5 Jahren Kosten zu sparen!</span>
+            `;
+
+            proPrice.innerText = "€299";
+            proOld.innerText = "€399";
+            proBadge.innerHTML = `
+                <span class="lang-en">LAUNCH PROMO: 25% OFF</span>
+                <span class="lang-de">LAUNCH-RABATT: 25% SPAREN</span>
+            `;
+            proBadge.className = "promo-badge badge-yellow";
+            proPeriod.innerHTML = `
+                <span class="lang-en">/ year</span>
+                <span class="lang-de">/ Jahr</span>
+            `;
+
+            teamPrice.innerText = "€999";
+            teamOld.innerText = "€1,299";
+            teamBadge.innerHTML = `
+                <span class="lang-en">BEST VALUE: 23% OFF</span>
+                <span class="lang-de">SPARANGEBOT: 23% VERBILLIGT</span>
+            `;
+            teamBadge.className = "promo-badge badge-yellow";
+            teamPeriod.innerHTML = `
+                <span class="lang-en">/ year</span>
+                <span class="lang-de">/ Jahr</span>
+            `;
+        }
+    }
+</script>
+
+</body>
+</html>
