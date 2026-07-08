@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing & ROI | Logic Analyzer Pro</title>
+    <!-- Font Awesome for beautiful icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -86,7 +87,7 @@
 
         /* Call To Action Buttons */
         .btn { display: block; width: 100%; padding: 14px; border-radius: 6px; text-align: center; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: 0.2s; border: none; cursor: pointer; }
-        .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
+        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
         .btn-outline:hover { background: var(--primary); color: white; }
         .btn-primary { background: var(--primary); color: white; }
         .btn-primary:hover { background: var(--primary-dark); }
@@ -119,6 +120,7 @@
         .impressum-block { margin-bottom: 20px; }
         .impressum-block h3 { color: var(--primary); margin-bottom: 12px; border-bottom: 2px solid var(--primary); padding-bottom: 5px; }
         .impressum-block p { margin-bottom: 6px; font-size: 0.95rem; }
+        
         .legal-notice-box { margin-top: 30px; border-top: 1px solid var(--border); padding-top: 25px; font-size: 0.85rem; color: var(--text-light); }
         .legal-notice-box h4 { color: var(--text-dark); margin-bottom: 8px; }
 
@@ -233,7 +235,7 @@
             </div>
 
             <!-- PRO -->
-            <div class="card">
+            <div class="card bg">
                 <div class="tier-title">Pro</div>
                 <div class="price-box">
                     <span id="pro-old" class="old-price">€399</span>
@@ -266,6 +268,7 @@
                         <span class="lang-de">Bereinigten SCL-Code exportieren</span>
                     </li>
                 </ul>
+                <!-- Fixed: Pointed directly to your active Lemon Squeezy checkout link -->
                 <a href="https://scaauditor.lemonsqueezy.com/checkout/buy/42b3f4e6-41c0-47e8-ab02-d0b83c099fe6" class="btn btn-primary" target="_blank">
                     <span class="lang-en">Buy Pro License</span>
                     <span class="lang-de">Pro-Lizenz kaufen</span>
@@ -307,7 +310,7 @@
                         <span class="lang-de">Eigene Enterprise KI-Endpunkte</span>
                     </li>
                 </ul>
-                <a href="#" class="btn btn-success">
+                <a href="https://scaauditor.lemonsqueezy.com/checkout/buy/42b3f4e6-41c0-47e8-ab02-d0b83c099fe6" class="btn btn-success" target="_blank">
                     <span class="lang-en">Get Team Key</span>
                     <span class="lang-de">Team-Lizenz kaufen</span>
                 </a>
@@ -515,21 +518,22 @@
                     <p><strong>Operator & Publisher:</strong></p>
                     <p>Gholamreza Mehranpour</p>
                     <p>Industrial Intelligence (Geschäftsbezeichnung)</p>
-                    
-                    <!-- Write your actual physical street name & house number in Pfullendorf below: -->
-                    <p>AM Pfarröschle   2/1</p> 
+                    <p>Am Pfarröschle 2/1</p> 
                     <p>88630 Pfullendorf, Germany</p>
-                    
+                    <br>
                     <p><strong>Contact Details:</strong></p>
                     <p>Email: rezamehranpour1981@gmail.com</p>
+                    
+                    <!-- Added clean B2B privacy link here -->
+                    <p style="margin-top: 15px;">
+                        <a href="privacy.html" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline;">Privacy Policy / Datenschutzerklärung</a>
+                    </p>
                 </div>
 
                 <div class="impressum-block">
                     <h3>Legal Entity Details</h3>
                     <p><strong>Legal Form:</strong> Einzelunternehmen (Sole Proprietorship)</p>
                     <p><strong>Regulatory Tax Identifier:</strong> Steuer-ID: 65316948672</p>
-                    
-                    <!-- Fixed: Updated to the correct chamber for Pfullendorf -->
                     <p><strong>Registered Chamber:</strong> IHK Bodensee-Oberschwaben, Germany</p>
                     <p><strong>Responsible for Content:</strong> G. Mehranpour</p>
                 </div>
@@ -547,9 +551,13 @@
 
 </div>
 
+<!-- Standardized footer displaying privacy links directly for crawlers -->
 <footer>
     <p>&copy; 2025 Industrial Intelligence. All rights reserved.</p>
-    <p style="margin-top:10px; font-size:0.8rem; opacity:0.8;">Perpetual license packages include 12 months of free version maintenance. Prices exclude tax where applicable.</p>
+    <p style="margin-top:10px; font-size:0.9rem;">
+        <a href="privacy.html" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline;">Privacy Policy / Datenschutzerklärung</a>
+    </p>
+    <p style="margin-top:15px; font-size:0.8rem; opacity:0.8;">Perpetual license packages include 12 months of free version maintenance. Prices exclude tax where applicable.</p>
 </footer>
 
 <script>
@@ -593,16 +601,14 @@
         const msg = document.getElementById('savings-msg');
 
         if (isLifetime) {
-            // Update savings banner in English and German
             msg.innerHTML = `
                 <span class="lang-en">⭐ ROI ALERT: Break-even in less than 2.5 years compared to Yearly subscriptions!</span>
                 <span class="lang-de">⭐ ROI-ALARM: Amortisiert nach weniger als 2,5 Jahren im Vergleich zu Abonnements!</span>
             `;
 
             proPrice.innerText = "€749";
-            proOld.innerText = "€897"; // 3-year subscription comparison anchor
-            
-            // Set dynamic lifetime badges in both languages
+            proOld.innerText = "€897"; 
+
             proBadge.innerHTML = `
                 <span class="lang-en">OWN IT FOREVER (CAPEX)</span>
                 <span class="lang-de">DAUERHAFT LIZENZIERT (CAPEX)</span>
