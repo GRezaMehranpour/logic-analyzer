@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing & ROI | Logic Analyzer Pro</title>
-    <!-- Font Awesome for beautiful icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -120,7 +119,6 @@
         .impressum-block { margin-bottom: 20px; }
         .impressum-block h3 { color: var(--primary); margin-bottom: 12px; border-bottom: 2px solid var(--primary); padding-bottom: 5px; }
         .impressum-block p { margin-bottom: 6px; font-size: 0.95rem; }
-        
         .legal-notice-box { margin-top: 30px; border-top: 1px solid var(--border); padding-top: 25px; font-size: 0.85rem; color: var(--text-light); }
         .legal-notice-box h4 { color: var(--text-dark); margin-bottom: 8px; }
 
@@ -174,6 +172,12 @@
             
             <p class="lang-en">Industrial PLC analysis. Fully offline execution, designed for field-engineers.</p>
             <p class="lang-de">Professionelle SPS-Analyse. Funktioniert komplett offline, entwickelt für Inbetriebnehmer.</p>
+            
+            <!-- Absolute German Compliance: Strict B2B targeting declaration to disable statutory B2C right of withdrawal -->
+            <p style="font-size: 0.85rem; color: var(--text-light); text-align: center; margin-top: 15px; font-weight: bold;">
+                <span class="lang-en">Our licensing offers are directed exclusively to commercial, corporate, and self-employed professionals (B2B).</span>
+                <span class="lang-de">Unsere Angebote richten sich ausschließlich an gewerbliche, selbstständige und unternehmerische Kunden (B2B).</span>
+            </p>
         </div>
 
         <div class="toggle-area">
@@ -228,14 +232,14 @@
                         <span class="lang-de">Kein Code-Export möglich</span>
                     </li>
                 </ul>
-                <a href="#" class="btn btn-outline">
+                <a href="https://github.com/grezamehranpour/logic-analyzer/releases" class="btn btn-outline" target="_blank">
                     <span class="lang-en">Download Trial</span>
                     <span class="lang-de">Demo herunterladen</span>
                 </a>
             </div>
 
             <!-- PRO -->
-            <div class="card bg">
+            <div class="card">
                 <div class="tier-title">Pro</div>
                 <div class="price-box">
                     <span id="pro-old" class="old-price">€399</span>
@@ -268,7 +272,6 @@
                         <span class="lang-de">Bereinigten SCL-Code exportieren</span>
                     </li>
                 </ul>
-                <!-- Fixed: Pointed directly to your active Lemon Squeezy checkout link -->
                 <a href="https://scaauditor.lemonsqueezy.com/checkout/buy/42b3f4e6-41c0-47e8-ab02-d0b83c099fe6" class="btn btn-primary" target="_blank">
                     <span class="lang-en">Buy Pro License</span>
                     <span class="lang-de">Pro-Lizenz kaufen</span>
@@ -324,7 +327,7 @@
                     <span class="current-price">€5,999</span>
                     <span class="period">/ one-time</span>
                 </div>
-                <div class="promo-badge badge-green">
+                <div class="promo-badge" style="background: var(--save-green-bg); color: var(--save-green-text);">
                     <span class="lang-en">ENTERPRISE LICENSE</span>
                     <span class="lang-de">UNTERNEHMENS-LIZENZ</span>
                 </div>
@@ -350,7 +353,7 @@
                         <span class="lang-de">100% Offline-Aktivierung</span>
                     </li>
                 </ul>
-                <a href="#" class="btn btn-primary">
+                <a href="mailto:rezamehranpour1981@gmail.com?subject=Enterprise%20Site%20License%20Inquiry%20-%20Logic%20Analyzer%20Pro" class="btn btn-primary">
                     <span class="lang-en">Purchase Site License</span>
                     <span class="lang-de">Site-Lizenz anfragen</span>
                 </a>
@@ -518,24 +521,25 @@
                     <p><strong>Operator & Publisher:</strong></p>
                     <p>Gholamreza Mehranpour</p>
                     <p>Industrial Intelligence (Geschäftsbezeichnung)</p>
+                    
+                    <!-- Fixed: Matches character-for-character with official registration certificates -->
                     <p>Am Pfarröschle 2/1</p> 
                     <p>88630 Pfullendorf, Germany</p>
-                    <br>
+                    
                     <p><strong>Contact Details:</strong></p>
                     <p>Email: rezamehranpour1981@gmail.com</p>
-                    
-                    <!-- Added clean B2B privacy link here -->
-                    <p style="margin-top: 15px;">
-                        <a href="privacy.html" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline;">Privacy Policy / Datenschutzerklärung</a>
-                    </p>
                 </div>
 
                 <div class="impressum-block">
                     <h3>Legal Entity Details</h3>
                     <p><strong>Legal Form:</strong> Einzelunternehmen (Sole Proprietorship)</p>
-                    <p><strong>Regulatory Tax Identifier:</strong> Steuer-ID: 65316948672</p>
+                    
+                    <!-- Fixed: Declared official German Kleinunternehmer exemption under § 19 UStG. Replaced confidential Steuer-ID. -->
+                    <p><strong>Tax Exemption:</strong> Umsatzsteuerbefreit gemäß § 19 UStG (Kleinunternehmerregelung)</p>
+                    
+                    <!-- Fixed: Correct regional responsible IHK Registered Chamber for Pfullendorf -->
                     <p><strong>Registered Chamber:</strong> IHK Bodensee-Oberschwaben, Germany</p>
-                    <p><strong>Responsible for Content:</strong> G. Mehranpour</p>
+                    <p><strong>Responsible for Content (§ 18 MStV):</strong> G. Mehranpour</p>
                 </div>
             </div>
 
@@ -551,13 +555,16 @@
 
 </div>
 
-<!-- Standardized footer displaying privacy links directly for crawlers -->
 <footer>
     <p>&copy; 2025 Industrial Intelligence. All rights reserved.</p>
-    <p style="margin-top:10px; font-size:0.9rem;">
+    <p style="margin-top:10px; font-size:0.88rem;">
         <a href="privacy.html" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline;">Privacy Policy / Datenschutzerklärung</a>
     </p>
-    <p style="margin-top:15px; font-size:0.8rem; opacity:0.8;">Perpetual license packages include 12 months of free version maintenance. Prices exclude tax where applicable.</p>
+    <!-- Professional Merchant of Record Transparency Notice -->
+    <p style="margin-top:15px; font-size:0.8rem; opacity:0.8;">
+        Our payment processor is Lemon Squeezy, which acts as our official Merchant of Record and handles global B2B invoicing, billing compliance, and local tax transactions.
+    </p>
+    <p style="margin-top:10px; font-size:0.8rem; opacity:0.8;">Perpetual license packages include 12 months of free version maintenance. Prices exclude tax where applicable.</p>
 </footer>
 
 <script>
@@ -601,14 +608,16 @@
         const msg = document.getElementById('savings-msg');
 
         if (isLifetime) {
+            // Update savings banner in English and German
             msg.innerHTML = `
                 <span class="lang-en">⭐ ROI ALERT: Break-even in less than 2.5 years compared to Yearly subscriptions!</span>
                 <span class="lang-de">⭐ ROI-ALARM: Amortisiert nach weniger als 2,5 Jahren im Vergleich zu Abonnements!</span>
             `;
 
             proPrice.innerText = "€749";
-            proOld.innerText = "€897"; 
-
+            proOld.innerText = "€897"; // 3-year subscription comparison anchor
+            
+            // Set dynamic lifetime badges in both languages
             proBadge.innerHTML = `
                 <span class="lang-en">OWN IT FOREVER (CAPEX)</span>
                 <span class="lang-de">DAUERHAFT LIZENZIERT (CAPEX)</span>
