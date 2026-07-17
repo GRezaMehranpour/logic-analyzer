@@ -75,14 +75,14 @@
             <p>Am Pfarröschle 2/1</p>
             <p>88630 Pfullendorf</p>
             <p>Deutschland</p>
-            <p>E-Mail: rezamehranpour1981@gmail.com</p>
+            <p>E-Mail: support@logic-analyzer-pro.de</p>
             <p>Telefon: +49 152 35864386</p>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-light);">Zuständige Kammer: Industrie- und Handelskammer Bodensee-Oberschwaben, Lindenstraße 2, 88250 Weingarten.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-light);">Zuständige Kammer: Industrie- und Handelskammer Bodensee-Oberschwaben, Lindenstraße 2, 88250 Weingarten, Germany.</p>
         </div>
         <p style="margin-top: 15px;">Ein Datenschutzbeauftragter ist nur zu benennen, wenn die gesetzlichen Voraussetzungen erfüllt sind. Sofern kein Datenschutzbeauftragter benannt ist, richten Sie Datenschutzanfragen bitte an die oben genannte E-Mail-Adresse.</p>
 
         <h2>2. Grundsatz: lokale Verarbeitung von PLC-Projekten</h2>
-        <p>Logic Analyzer Pro ist eine lokale Desktop-Anwendung. Die Analyse exportierter PLC-/SPS-Dateien wie SCL, XML, DB und UDT erfolgt standardmäßig lokal auf dem Endgerät des Kunden. Projektcode, Kommentare, Variablennamen und Architekturinformationen werden im Standardbetrieb nicht an den Anbieter übermittelt.</p>
+        <p>Logic Analyzer Pro is eine lokale Desktop-Anwendung. Die Analyse exportierter PLC-/SPS-Dateien wie SCL, XML, DB und UDT erfolgt standardmäßig lokal auf dem Endgerät des Kunden. Projektcode, Kommentare, Variablennamen und Architekturinformationen werden im Standardbetrieb nicht an den Anbieter übermittelt.</p>
         <p>Rechtsgrundlage für lokale Verarbeitung im Rahmen der Softwarenutzung ist Art. 6 Abs. 1 lit. b DSGVO, soweit die Verarbeitung zur Vertragserfüllung erforderlich ist. Soweit der Kunde die Software für eigene Kunden- oder Mitarbeiterdaten nutzt, ist der Kunde für diese Verarbeitung eigenständig verantwortlich.</p>
 
         <h2>3. Lizenzaktivierung und Lizenzprüfung</h2>
@@ -99,6 +99,14 @@
         <p>Auch pseudonyme Hardware- oder Instanzkennungen können personenbezogene Daten sein, wenn sie mit Kundenkonto, Bestellung oder Lizenz verbunden werden können.</p>
         <p>Rechtsgrundlagen sind Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung und Lizenzbereitstellung) und Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Missbrauchsvermeidung, IT-Sicherheit, Lizenzschutz und Betrugsbekämpfung).</p>
 
+        <h2>3b. Zugriff auf Endgeräte und lokale Speicherung (§ 25 TDDDG)</h2>
+        <p>Die Software speichert zur Sicherstellung der Lizenzintegrität, des Diebstahlschutzes und zur Durchsetzung von Testzeiträumen lokale Konfigurationsparameter auf dem Endgerät des Nutzers:</p>
+        <ul>
+            <li><code>sys_time_sec.dat</code>: Speichert rollierende Zeitstempel zur Absicherung der 30-tägigen Testversion gegen Manipulation der Systemuhr.</li>
+            <li><code>license_cache.json</code>: Speichert die kryptografisch verifizierten Lizenzparameter und Hardware-IDs lokal ab.</li>
+        </ul>
+        <p>Diese lokalen Speicher- und Zugriffsprozesse sind für die Erbringung der vom Nutzer ausdrücklich gewünschten Leistung (Nutzung der Software im Rahmen der Lizenzbestimmungen) zwingend erforderlich gemäß <strong>§ 25 Abs. 2 Nr. 2 TDDDG</strong>. Eine zusätzliche Einwilligung des Nutzers ist für diese technisch notwendigen Operationen nicht erforderlich.</p>
+
         <h2>4. Offline-Cache und lokale Speicherorte</h2>
         <p>Die Software kann Lizenzdaten lokal speichern, z. B. in einem AppData-/Konfigurationsordner des Betriebssystems. Der Cache dient dazu, eine zeitlich begrenzte Offline-Nutzung zu ermöglichen und Lizenzstatus, letzte Validierung und Offline-Kulanzfrist zu speichern.</p>
         <p>Der lokale Cache wird nicht automatisch an den Anbieter übermittelt. Bei Manipulation, Korruption oder Ablauf der Offline-Kulanzfrist kann eine erneute Online-Validierung erforderlich sein.</p>
@@ -109,7 +117,7 @@
 
         <h2>6. Optionale Cloud-KI-Funktionen</h2>
         <p>Wenn der Kunde in der generierten HTML-Auswertung OpenAI, Groq, einen Custom-AI-Endpunkt oder einen anderen Cloud-/Remote-Anbieter auswählt und eine Analyse auslöst, können ausgewählte PLC-Codeabschnitte, Variablennamen, Kommentare, Strukturen und Architekturinformationen direkt an den jeweiligen Anbieter übertragen werden.</p>
-        <p>Die Cloud-KI-Funktion ist optional. Die Software zeigt einen Warnhinweis und verlangt eine aktive Bestätigung, bevor Cloud-/Custom-AI genutzt wird. Für vertrauliche Projekte wird die lokale Nutzung mit Ollama oder einem vergleichbaren lokalen Backend empfohlen.</p>
+        <p>Die Cloud-KI-Funktion ist optional. Die Software zeigt einen Warnhinweis und verlangt eine aktive Bestätigung, bevor Cloud/custom AI genutzt wird. Für vertrauliche Projekte wird die lokale Nutzung mit Ollama oder einem vergleichbaren lokalen Backend empfohlen.</p>
         <p>Der Kunde ist verantwortlich sicherzustellen, dass er zur Übermittlung berechtigt ist und dass Kundenvorgaben, Geheimhaltungspflichten, Betriebsgeheimnisschutz, Exportkontrolle und Datenschutzrecht eingehalten werden.</p>
         <p>Rechtsgrundlage für die vom Kunden aktiv ausgelöste Cloud-KI-Nutzung ist in der Regel Art. 6 Abs. 1 lit. a DSGVO (Einwilligung/aktive Auswahl) oder, bei rein betrieblichen Kundendaten, die jeweilige Rechtsgrundlage des Kunden. Eine Einwilligung kann jederzeit für die Zukunft widerrufen werden, indem Cloud-KI nicht mehr genutzt und ggf. gespeicherte API-Einstellungen gelöscht werden.</p>
 
@@ -145,7 +153,7 @@
 
         <h2>13. Rechte betroffener Personen</h2>
         <p>Betroffene Personen haben nach Maßgabe der DSGVO das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20), Widerspruch gegen Verarbeitung auf Grundlage berechtigter Interessen (Art. 21) sowie Widerruf einer Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3).</p>
-        <p>Anfragen richten Sie bitte an: <strong>rezamehranpour1981@gmail.com</strong></p>
+        <p>Anfragen richten Sie bitte an: <strong>support@logic-analyzer-pro.de</strong></p>
 
         <h2>14. Beschwerderecht</h2>
         <p>Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren. Für Baden-Württemberg ist zuständig:</p>
@@ -153,10 +161,10 @@
             <p><strong>Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg (LfDI BW)</strong></p>
             <p>Lautenschlagerstraße 20</p>
             <p>70173 Stuttgart</p>
-            <p>Web: <a href="https://www.baden-wuerttemberg.datenschutz.de/" target="_blank">https://www.baden-wuerttemberg.datenschutz.de/</a></p>
+            <p>Website: <a href="https://www.baden-wuerttemberg.datenschutz.de/" target="_blank">https://www.baden-wuerttemberg.datenschutz.de/</a></p>
         </div>
 
-        <h2>15. Sicherheit</h2>
+        <h2>15. Security</h2>
         <p>Der Anbieter trifft angemessene technische und organisatorische Maßnahmen, um Lizenz- und Supportdaten zu schützen. Kein System ist jedoch absolut sicher. Sicherheitsmeldungen können an die im Dokument <code>SECURITY.md</code> angegebene Kontaktadresse gesendet werden.</p>
 
         <h2>16. Änderungen</h2>
@@ -179,7 +187,7 @@
             <p>Am Pfarröschle 2/1</p>
             <p>88630 Pfullendorf</p>
             <p>Germany</p>
-            <p>Email: rezamehranpour1981@gmail.com</p>
+            <p>Email: support@logic-analyzer-pro.de</p>
             <p>Phone: +49 152 35864386</p>
             <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-light);">Competent chamber: Chamber of Industry and Commerce Bodensee-Oberschwaben, Lindenstraße 2, 88250 Weingarten, Germany.</p>
         </div>
@@ -202,6 +210,14 @@
         <p>These data may be transmitted to Lemon Squeezy as payment and licensing infrastructure partner. Depending on payment processing, invoice, tax and payment data may also be processed by Lemon Squeezy or its payment providers.</p>
         <p>Pseudonymous hardware or instance identifiers can still be personal data if they can be linked to a customer account, order or license.</p>
         <p>The legal bases are Art. 6(1)(b) GDPR (contract performance and license delivery) and Art. 6(1)(f) GDPR (legitimate interests in abuse prevention, IT security, license protection and fraud prevention).</p>
+
+        <h2>3b. Device Storage Access & Cached Identifiers (§ 25 TDDDG)</h2>
+        <p>To enforce licensing compliance, verify monotonic clock alignment, and prevent piracy, the Software accesses and writes restricted diagnostic values to your terminal equipment:</p>
+        <ul>
+            <li><code>sys_time_sec.dat</code>: Stores rolling unix timestamps locally to prevent manual system clock manipulations on trials.</li>
+            <li><code>license_cache.json</code>: Stores the cryptographically signed license keys and localized hardware fingerprints locally.</li>
+        </ul>
+        <p>This local storage access is strictly necessary for the technical execution of the services explicitly requested by you (pursuant to <strong>§ 25(2) No. 2 of the German Digital Services Data Protection Act - TDDDG</strong>). No additional user consent is required under European ePrivacy rules for these technically mandatory tasks.</p>
 
         <h2>4. Offline Cache and Local Storage</h2>
         <p>The Software may store license data locally, for example in an AppData/configuration folder of the operating system. The cache is used to allow time-limited offline use and to store license status, last validation and offline grace period.</p>
@@ -249,7 +265,7 @@
 
         <h2>13. Data Subject Rights</h2>
         <p>Subject to the GDPR, data subjects have the right of access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20), objection to processing based on legitimate interests (Art. 21) and withdrawal of consent with effect for the future (Art. 7(3)).</p>
-        <p>Please send requests to: <strong>rezamehranpour1981@gmail.com</strong></p>
+        <p>Please send requests to: <strong>support@logic-analyzer-pro.de</strong></p>
 
         <h2>14. Right to Lodge a Complaint</h2>
         <p>You have the right to lodge a complaint with a data protection supervisory authority. For Baden-Württemberg, the competent authority is:</p>
