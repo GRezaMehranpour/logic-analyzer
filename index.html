@@ -3,8 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing & ROI | Logic Analyzer Pro</title>
+    <title>SCL Dependency Analysis & Mapping | Logic Analyzer Pro</title>
+    
+    <!-- === ADVANCED B2B SEO META TAGS === -->
+    <meta name="description" content="Logic Analyzer Pro: The professional offline SCL, XML, and DB project dependency analyzer for Siemens TIA Portal automation engineers. Generate interactive relationship graphs instantly.">
+    <meta name="keywords" content="Siemens, TIA Portal, PLC, SCL, XML, DB, UDT, Dependency Graph, Automation Engineer, SPS Programmierung, PLC Code Analysis, Germany">
+    <meta name="author" content="Gholamreza Mehranpour (Industrial Intelligence)">
+    <link rel="canonical" href="https://grezamehranpour.github.io/logic-analyzer/">
+
+    <!-- OpenGraph Previews (LinkedIn, Slack, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PLC Project Dependency Analysis | Logic Analyzer Pro">
+    <meta property="og:description" content="Offline Siemens TIA Portal code parser. Visualize SCL blocks, UDTs, global DBs, and IO tags in a responsive, interactive relationship graph.">
+    <meta property="og:url" content="https://grezamehranpour.github.io/logic-analyzer/">
+    <meta property="og:image" content="https://grezamehranpour.github.io/logic-analyzer/dashboard_preview.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <!-- JSON-LD Structured Data Schema (Google Search Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Logic Analyzer Pro",
+      "operatingSystem": "Windows 10, Windows 11",
+      "applicationCategory": "DeveloperApplication, BusinessApplication",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "0",
+        "highPrice": "5999",
+        "offerCount": "4"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Industrial Intelligence",
+        "publishingPrinciples": "https://grezamehranpour.github.io/logic-analyzer/privacy.html"
+      }
+    }
+    </script>
+
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --primary: #005A9C;
@@ -55,6 +96,13 @@
         .hero p { color: var(--text-light); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
 
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+        /* Product Gallery Styles */
+        .product-gallery { margin-bottom: 50px; }
+        .gallery-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 15px; }
+        .gallery-card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); text-align: center; }
+        .gallery-card img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+        .gallery-caption { font-size: 0.85rem; color: var(--text-light); margin-top: 10px; font-style: italic; }
 
         /* Toggle Container for billing options */
         .toggle-area { display: flex; flex-direction: column; align-items: center; margin-bottom: 45px; }
@@ -130,6 +178,7 @@
             .nav-container { flex-direction: column; gap: 15px; }
             .hero h1 { font-size: 2rem; }
             .upgrade-banner { flex-direction: column; text-align: center; }
+            .gallery-container { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -169,17 +218,39 @@
     <!-- PAGE 1: PRICING -->
     <div id="pricing" class="page active-page">
         <div class="hero">
-            <h1 class="lang-en">Simple, Transparent Pricing</h1>
-            <h1 class="lang-de">Einfache, transparente Preise</h1>
+            <!-- UPGRADED HEADING FOR B2B LAW TRANSPARENCY -->
+            <h1 class="lang-en">Transparent B2B Licensing</h1>
+            <h1 class="lang-de">Transparente B2B-Lizenzierung</h1>
             
             <p class="lang-en">Industrial PLC analysis. Fully offline execution, designed for field-engineers.</p>
             <p class="lang-de">Professionelle SPS-Analyse. Funktioniert komplett offline, entwickelt für Inbetriebnehmer.</p>
             
-            <!-- B2B targeting notice. Do not sell to consumers unless consumer withdrawal and pre-contract notices are added. -->
             <p style="font-size: 0.85rem; color: var(--text-light); text-align: center; margin-top: 15px; font-weight: bold;">
                 <span class="lang-en">Our licensing offers are directed exclusively to commercial, corporate, and self-employed professionals (B2B). No consumer offer is made on this page.</span>
                 <span class="lang-de">Unsere Angebote richten sich ausschließlich an gewerbliche, selbstständige und unternehmerische Kunden (B2B). Dies ist kein Verbraucherangebot.</span>
             </p>
+        </div>
+
+        <!-- DUAL PRODUCT PREVIEW GALLERY (Wrapped in semantic figures for SEO indexing) -->
+        <div class="product-gallery" style="margin-top: 40px;">
+            <div class="gallery-container">
+                <!-- 1. The Desktop Client -->
+                <figure class="gallery-card" style="flex: 1; min-width: 280px; max-width: 440px;">
+                    <img src="app_ui.png" alt="Logic Analyzer Pro Desktop Application Interface showing activated site license">
+                    <figcaption class="gallery-caption">
+                        <span class="lang-en">1. Desktop Client (Local Parse & Build)</span>
+                        <span class="lang-de">1. Desktop-Client (Lokales Einlesen & Generieren)</span>
+                    </figcaption>
+                </figure>
+                <!-- 2. The HTML Dashboard -->
+                <figure class="gallery-card" style="flex: 1.5; min-width: 320px; max-width: 620px;">
+                    <img src="dashboard_preview.png" alt="Logic Analyzer Pro Interactive HTML dependency graph and local AI analysis panel">
+                    <figcaption class="gallery-caption">
+                        <span class="lang-en">2. Standalone Interactive Dashboard & AI Analysis</span>
+                        <span class="lang-de">2. Eigenständiges interaktives Dashboard & KI-Analyse</span>
+                    </figcaption>
+                </figure>
+            </div>
         </div>
 
         <div class="toggle-area">
@@ -234,11 +305,10 @@
                         <span class="lang-de">Kein Code-Export möglich</span>
                     </li>
                 </ul>
-                <!-- Corrected INTRO Card Button -->
-             <a href="https://scaauditor.lemonsqueezy.com/checkout/buy/d737a367-3a62-4c46-ba06-751ed9ebda54" class="btn btn-outline" target="_blank">
-    <span class="lang-en">Download Trial</span>
-    <span class="lang-de">Demo herunterladen</span>
-</a>
+                <a href="https://scaauditor.lemonsqueezy.com/checkout/buy/d737a367-3a62-4c46-ba06-751ed9ebda54" class="btn btn-outline" target="_blank">
+                    <span class="lang-en">Download Trial</span>
+                    <span class="lang-de">Demo herunterladen</span>
+                </a>
             </div>
 
             <!-- PRO -->
@@ -317,9 +387,9 @@
                     </li>
                 </ul>
                 <a href="https://scaauditor.lemonsqueezy.com/checkout/buy/f9106e7b-0cd4-4b33-a462-52e1e47a23a2" class="btn btn-success" target="_blank">
-    <span class="lang-en">Get Team Key</span>
-    <span class="lang-de">Team-Lizenz kaufen</span>
-</a>
+                    <span class="lang-en">Get Team Key</span>
+                    <span class="lang-de">Team-Lizenz kaufen</span>
+                </a>
             </div>
 
             <!-- SITE -->
@@ -356,7 +426,7 @@
                         <span class="lang-de">100% Offline-Aktivierung</span>
                     </li>
                 </ul>
-               <a href="#" onclick="showPage('legal'); return false;" class="btn btn-primary">
+                <a href="#" onclick="showPage('legal'); return false;" class="btn btn-primary">
                     <span class="lang-en">Purchase Site License</span>
                     <span class="lang-de">Site-Lizenz anfragen</span>
                 </a>
@@ -484,7 +554,7 @@
                     <p class="lang-en">Download and run the software. The Activation screen displays your unique 12-char hardware hash.</p>
                     <p class="lang-de">Laden Sie die Software herunter und starten Sie diese. Der Aktivierungsbildschirm zeigt Ihren eindeutigen 12-stelligen Hardware-Hash an.</p>
                     
-                    <div class="hw-demo">Hardware ID: 2F77A1A2XXXX</div>
+                    <div class="hw-demo">Hardware ID: 1F77A1A2BBE6</div>
                 </div>
             </div>
 
@@ -524,8 +594,6 @@
                     <p><strong>Operator & Publisher:</strong></p>
                     <p>Gholamreza Mehranpour</p>
                     <p>Industrial Intelligence (Geschäftsbezeichnung)</p>
-                    
-                    <!-- Fixed: Matches character-for-character with official registration certificates -->
                     <p>Am Pfarröschle 2/1</p> 
                     <p>88630 Pfullendorf, Germany</p>
                     
@@ -553,7 +621,7 @@
                 <p>Siemens, SIMATIC, TIA Portal, STEP 7, and S7-1500 are registered trademarks of Siemens AG. Logic Analyzer Pro is an independent analytical tool designed for structural code tracing and is not affiliated, sponsored, endorsed, or approved by Siemens AG.</p>
                 <br>
                 <h4>Industrial Safety Notice</h4>
-                <p>Logic Analyzer Pro is an engineering analysis and documentation aid only. It is not safety-certified under IEC 61508, IEC 62061, ISO 13849, SIL, PL or comparable standards and must never be used as the sole basis to approve functional safety loops, machine operations, process interlocks, CE conformity, FAT/SAT or commissioning approvals.</p>
+                <p>Logic Analyzer Pro is an engineering analysis aid only. It is not safety-certified under IEC 61508, IEC 62061, ISO 13849, SIL, PL or comparable standards and must never be used to approve functional safety loops, machine operations, process interlocks, CE conformity, FAT/SAT or commissioning approvals.</p>
             </div>
         </div>
     </div>
