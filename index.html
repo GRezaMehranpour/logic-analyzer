@@ -98,7 +98,7 @@
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
 
         /* Product Gallery Styles */
-        .product-gallery { margin-bottom: 50px; }
+        .product-gallery { margin-bottom: 30px; }
         .gallery-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 15px; }
         .gallery-card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); text-align: center; }
         .gallery-card img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
@@ -113,7 +113,7 @@
         .save-banner { margin-top: 12px; color: var(--secondary); font-weight: 700; font-size: 0.88rem; }
 
         /* Pricing Grid Layout */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; align-items: stretch; margin-bottom: 50px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; align-items: stretch; margin-bottom: 50px; }
         .card { background: var(--white); border-radius: 12px; padding: 35px 25px; border: 1px solid var(--border); display: flex; flex-direction: column; transition: 0.3s; position: relative; overflow: hidden; }
         .card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
         .card.featured { border: 2px solid var(--secondary); }
@@ -255,7 +255,7 @@
 
         <!-- PRO PRODUCT VIDEO PLAYER -->
         <div style="text-align: center; margin-top: 30px; margin-bottom: 50px;">
-            <h3 style="color: var(--primary); margin-bottom: 15px; font-weight: bold; font-size: 1.5rem;">
+            <h3 style="color: var(--primary); margin-bottom: 15px; font-weight: bold;">
                 <span class="lang-en">See Logic Analyzer Pro in Action</span>
                 <span class="lang-de">Logic Analyzer Pro in Aktion sehen</span>
             </h3>
@@ -381,8 +381,8 @@
                     <span class="lang-de">LAUNCH-RABATT: 25% SPAREN</span>
                 </div>
                 
-                <p class="desc lang-en">Standard operational tool for professional independent PLC programmers.</p>
-                <p class="desc lang-de">Das Standardwerkzeug für selbstständige SPS-Programmierer und Freiberufler.</p>
+                <p class="desc lang-en">Standard operational tool for independent, self-employed automation engineers.</p>
+                <p class="desc lang-de">Das Standardwerkzeug für selbstständige SPS-Ingenieure und freie Programmierer.</p>
                 
                 <ul class="features">
                     <li><i class="fas fa-check"></i> 
@@ -801,16 +801,10 @@
             teamPeriod.innerHTML = `
                 <span class="lang-en">/ year</span>
                 <span class="lang-de">/ Jahr</span>
-            </h2>
+            `;
         }
     }
 </script>
 
 </body>
 </html>
-
-I want to add the PRO PRODUCT VIDEO PLAYER section to this index.html, but I see you placed the placeholder code "<!-- KEY CAPABILITIES SECTION -->" in the style tag area. It seems some css classes are duplicated, and there's a broken syntax on line 434 (a closed `</h2>` instead of `</span>`).
-
-Please correct all these CSS leakages, fix the broken `</h2>` tag on line 434, inject the PRO PRODUCT VIDEO PLAYER beautifully in the correct place in the body, and make sure the whole HTML is complete, clean, and 100% perfect for my GitHub page. Do not simplify any code. Just make it perfect.
-
-ACT AS A GERMAN IT LAWYER AND EXPERIENCED FULLSTACK PROGRAMMER.
